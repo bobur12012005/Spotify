@@ -1,0 +1,121 @@
+a {
+    text-decoration: none;
+
+    .singer {
+        width: 100%;
+        height: 66px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #252525;
+        }
+
+        .data-side {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+
+            .singer-img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                min-width: 50px;
+                height: 50px;
+                overflow: hidden;
+                border-radius: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .singer-data {
+                display: flex;
+                flex-direction: column;
+
+                .name {
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                .proficiency {
+                    color: #bbbbbb;
+                    font-size: 13px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .song-playing-info {
+            display: none;
+        }
+    }
+
+    .active-singer {
+        background-color: #303030;
+
+        &:hover {
+            background-color: #404040;
+        }
+    }
+
+    .active-singer-playing-music {
+        .data-side {
+            .singer-data {
+                .name {
+                    color: #65D36E;
+                }
+            }
+        }
+
+        .song-playing-info {
+            display: block;
+        }
+    }
+
+    .active-singer-stopped-music {
+        .song-playing-info {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    a {
+        .singer {
+            .data-side {
+                .singer-data {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    a {
+        .singer {
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            
+            .data-side {
+                .singer-img {
+                    width: 30px;
+                    height: 30px;
+                    min-width: 30px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <script defer src="/modules/guard.js"></script>
+    <title>Song</title>
+</head>
+
+<body>
+
+    <div class="total-container">
+
+        <aside class="left-sidebar"></aside>
+
+        <main class="container">
+            <header></header>
+
+            <div class="song-img-data-place">
+                <div class="song-data">
+                    <img src="/images/note.jpg">
+                    <span>Song Title</span>
+                </div>
+            </div>
+
+            <div class="total-play-button-place">
+                <button class="play-pause">
+                    <img src="/icons/play.svg">
+                </button>
+                <button class="add">
+                    <img src="/icons/plus-circle.svg">
+                </button>
+                <button class="options">
+                    <img src="/icons/dots.svg">
+                </button>
+            </div>
+
+            <div class="recommended-songs">
+                <div class="song-top">
+                    <span>Recommended Songs</span>
+                </div>
+                <div class="recommended-songs-container"></div>
+            </div>
+
+            <footer></footer>
+        </main>
+
+        <aside class="right-sidebar"></aside>
+
+    </div>
+
+    <div class="player"></div>
+
+    <script type="module" src="./index.js"></script>
+
+</body>
+
+</html>

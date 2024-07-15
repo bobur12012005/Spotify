@@ -1,0 +1,19 @@
+{
+  "name": "spotify",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"vite --host\" \"json-server -p 8080 -w db.json \"",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "concurrently": "^8.2.2",
+    "json-server": "^1.0.0-beta.1"
+  }
+}

@@ -1,0 +1,108 @@
+a {
+    text-decoration: none;
+
+    .following-singer {
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+        border-radius: 6px;
+        overflow: hidden;
+        background-color: #303030;
+        transition: all 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #404040;
+
+            .name-side {
+                button {
+                    display: flex;
+                }
+            }
+        }
+
+        .img-side {
+            width: 50px;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .name-side {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-inline: 10px;
+            width: calc(100% - 40px);
+
+            span {
+                color: white;
+                font-weight: 600;
+            }
+
+            button {
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+                background: #65D36E;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 2px 10px;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                img {
+                    width: 70%;
+                    height: 70%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    a {
+        .following-singer {
+            .name-side {
+                button {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    a:nth-child(5) {
+        display: none;
+    }
+
+    a:nth-child(6) {
+        display: none;
+    }
+
+    a:nth-child(7) {
+        display: none;
+    }
+
+    a:nth-child(8) {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    a {
+        .following-singer {
+            height: 40px;
+
+            .img-side {
+                width: 40px;
+            }
+        }
+    }
+}

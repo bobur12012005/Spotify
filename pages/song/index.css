@@ -1,0 +1,334 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: black;
+    padding-top: 10px;
+    padding-inline: 10px;
+
+    .total-container {
+        width: 100%;
+        height: calc(100% - 90px);
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .left-sidebar {
+            width: 330px;
+            min-width: 200px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .container {
+            width: calc(100% - 680px);
+            min-width: 600px;
+            height: 100%;
+            background: #181818;
+            border-radius: 8px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            scrollbar-width: none;
+
+            header {
+                position: sticky;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            .song-img-data-place {
+                width: 100%;
+                height: 50%;
+                background: #181818;
+                margin-top: -80px;
+                padding: 20px;
+                padding-bottom: 0px;
+                display: flex;
+                align-items: end;
+
+                .song-data {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 20px;
+
+                    img {
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 4px;
+                    }
+
+                    span {
+                        color: white;
+                        font-size: 80px;
+                        font-weight: 900;
+                    }
+                }
+            }
+
+            .total-play-button-place {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 30px;
+                padding: 20px;
+
+                .play-pause {
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 100%;
+                    background-color: #65D36E;
+                    padding-left: 1px;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+
+                    img {
+                        width: 70%;
+                        height: 70%;
+                    }
+                }
+
+                .add {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30px;
+                    height: 30px;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .opions {
+                    width: fit-content;
+                    height: fit-content;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            .recommended-songs {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding-inline: 20px;
+                margin-top: 20px;
+
+                .song-top {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+
+                    span {
+                        color: white;
+                        font-size: 26px;
+                        font-weight: 700;
+                    }
+                }
+
+                .recommended-songs-container {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-block: 10px;
+                }
+            }
+
+            footer {
+                margin-top: 50px;
+                margin-bottom: 35px;
+                display: flex;
+                flex-direction: column;
+                padding-inline: 20px;
+                width: 100%;
+            }
+        }
+
+        .right-sidebar {
+            width: 330px;
+            min-width: 200px;
+            height: 100%;
+            background: #181818;
+            border-radius: 8px;
+            padding-bottom: 20px;
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
+    }
+
+    .player {
+        height: 90px;
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        .total-container {
+            .left-sidebar {
+                width: 270px;
+            }
+
+            .container {
+                width: calc(100% - 270px) !important;
+            }
+
+            .right-sidebar {
+                display: none !important;
+            }
+        }
+
+        .player {
+            padding-bottom: 15px;
+            align-items: end;
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        .total-container {
+            .left-sidebar {
+                width: 70px;
+                min-width: 70px;
+            }
+
+            .container {
+                width: 100% !important;
+
+                .song-img-data-place {
+                    height: 35%;
+
+                    .song-data {
+                        flex-direction: column;
+                        align-items: start;
+
+                        img {
+                            width: 130px;
+                            height: 130px;
+                        }
+
+                        span {
+                            color: white;
+                            font-size: 40px;
+                            font-weight: 900;
+                        }
+                    }
+                }
+
+                .total-play-button-place {
+                    display: none;
+                }
+            }
+        }
+
+        .player {
+            padding-bottom: 0px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+        .total-container {
+            .container {
+                min-width: 200px;
+
+                .recommended-songs {
+                    padding-inline: 0px;
+
+                    .song-top {
+                        padding-inline: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        .total-container {
+            .left-sidebar {
+                width: 50px;
+                min-width: 50px;
+            }
+
+            .container {
+                header {
+                    height: 50px;
+                }
+
+                .song-img-data-place {
+                    padding: 0px;
+                    .song-data {
+                        img {
+                            width: 80px;
+                            height: 80px;
+                        }
+
+                        span {
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                .recommended-songs {
+                    padding-inline: 20px;
+                    .song-top {
+                        padding-inline: 0px;
+                        span {
+                            font-size: 18px;
+                        }
+                    }
+                }
+
+                footer {
+                    display: none;
+                }
+            }
+        }
+    }
+}

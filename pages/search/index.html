@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <script defer src="/modules/guard.js"></script>
+    <title>Search</title>
+</head>
+
+<body>
+
+    <div class="total-container">
+
+        <aside class="left-sidebar"></aside>
+
+        <main class="container">
+            <header></header>
+
+            <div class="total-play-button-place">
+                <button class="play-pause">
+                    <img src="/icons/play.svg">
+                </button>
+            </div>
+
+            <div class="user-followings">
+                <div class="top">
+                    <span>Your Following Artists</span>
+                </div>
+                <div class="user-followings-container"></div>
+            </div>
+
+            <div class="results">
+                <a class="results-link" href="#">
+                    <div class="main-result-place-all">
+                        <div class="top">
+                            <span>Top Result</span>
+                        </div>
+                        <div class="main-result-place">
+                            <div class="result-img">
+                                <img src="/images/picture.jpg">
+                            </div>
+                            <span class="result-name">Name</span>
+                            <span class="result-type">Type</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="other-results-place-all">
+                    <div class="top">
+                        <span>Songs</span>
+                    </div>
+                    <div class="other-results-container"></div>
+                </div>
+            </div>
+
+            <footer></footer>
+        </main>
+
+        <aside class="right-sidebar"></aside>
+
+    </div>
+
+    <div class="player"></div>
+
+    <script type="module" src="/pages/search/index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/pages/artist/index.css">
+    <script defer src="/modules/guard.js"></script>
+    <title>Artist</title>
+</head>
+
+<body>
+
+    <div class="total-container">
+
+        <aside class="left-sidebar"></aside>
+
+        <main class="container">
+            <header></header>
+
+            <div class="artist-img-place">
+                <div class="artist-data-place">
+                    <div class="verification">
+                        <img src="/icons/verification.svg">
+                        <span>Verified Artist</span>
+                    </div>
+                    <span class="artist-name">Singer Name</span>
+                    <p class="followers-amount"><strong>0</strong> <span>followers</span></p>
+                </div>
+            </div>
+
+            <div class="total-play-button-place">
+                <button class="play-pause">
+                    <img src="/icons/play.svg">
+                </button>
+                <button class="follow">Following</button>
+                <button class="options">
+                    <img src="/icons/dots.svg">
+                </button>
+            </div>
+
+            <div class="popular-songs">
+                <div class="song-top">
+                    <div class="left-song">
+                        <span class="number">#</span>
+                        <span class="title">TITLE</span>
+                    </div>
+                    <div class="popularity">
+                        <span>POPULARITY</span>
+                    </div>
+                    <div class="duration">
+                        <span>DURATION</span>
+                    </div>
+                </div>
+                <div class="popular-songs-container"></div>
+                <button class="see-more">See more</button>
+            </div>
+
+            <div class="popular-releases">
+                <div class="boxes-top">
+                    <span>Popular Releases</span>
+                </div>
+                <div class="popular-releases-container"></div>
+            </div>
+
+            <footer></footer>
+        </main>
+
+        <aside class="right-sidebar"></aside>
+
+    </div>
+
+    <div class="player"></div>
+
+    <script type="module" src="/pages/artist/index.js"></script>
+
+</body>
+
+</html>

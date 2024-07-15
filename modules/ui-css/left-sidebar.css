@@ -1,0 +1,222 @@
+.left-sidebar-top {
+    height: 130px;
+    background: #181818;
+    border-radius: 8px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    a {
+        text-decoration: none;
+
+        button {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 32px;
+            gap: 20px;
+            transition: all 0.5s ease;
+
+            &:hover {
+                border-bottom: 1px solid white;
+            }
+
+            img {
+                width: 28px;
+                height: 28px;
+            }
+
+            span {
+                color: #B3B3B3;
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+
+        .active-button {
+            span {
+                color: white;
+            }
+        }
+    }
+}
+
+.left-sidebar-bottom {
+    height: calc(100% - 140px);
+    background: #181818;
+    border-radius: 8px;
+    padding-inline: 20px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .library-controller {
+        width: calc(100% + 40px);
+        padding-inline: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+        position: relative;
+
+        .library {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+
+            img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        .search-input {
+            position: absolute;
+            right: 20px;
+            z-index: 0;
+            width: 74%;
+            height: 35px;
+            border-radius: 30px;
+            background: #252525;
+            border: none;
+            padding: 0px 35px 0px 10px;
+            color: white;
+            font-weight: 700;
+
+            &::placeholder {
+                font-weight: 700;
+            }
+        }
+
+        .library-search {
+            position: relative;
+            z-index: 1;
+            width: 35px;
+            height: 35px;
+            border-radius: 100%;
+            transition: all 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                background-color: #252525;
+            }
+
+            img {
+                width: 22px;
+                height: 22px;
+                display: flex;
+            }
+        }
+    }
+
+    .singers-container {
+        height: calc(100% - 35px);
+        width: calc(100% + 16px);
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .left-sidebar-bottom {
+        .library-controller {
+            .search-input {
+                width: 68%;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .left-sidebar-top {
+        width: 70px;
+        padding: 20px 10px;
+        align-items: center;
+
+        a {
+            button {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .left-sidebar-bottom {
+        width: 70px;
+        padding: 20px 10px 0px;
+
+        .library-controller {
+            width: fit-content;
+
+            .search-input {
+                display: none;
+            }
+
+            .library-search {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .left-sidebar-top {
+        height: 80px;
+        gap: 10px;
+        border-radius: 5px;
+        padding: 15px 10px;
+        width: 50px;
+
+        a {
+            button {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 20px;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+    .left-sidebar-bottom {
+        height: calc(100% - 90px);
+        border-radius: 5px;
+        padding-inline: 10px;
+        padding-top: 10px;
+        width: 50px;
+
+        .library-controller {
+            width: calc(100% + 20px);
+            padding-inline: 10px;
+            padding-bottom: 10px;
+            align-items: center;
+
+            .library {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}

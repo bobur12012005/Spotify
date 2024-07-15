@@ -1,0 +1,397 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: black;
+    padding-top: 10px;
+    padding-inline: 10px;
+
+    .total-container {
+        width: 100%;
+        height: calc(100% - 90px);
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .left-sidebar {
+            width: 330px;
+            min-width: 200px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .container {
+            width: calc(100% - 680px);
+            min-width: 600px;
+            height: 100%;
+            background: #181818;
+            border-radius: 8px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            scrollbar-width: none;
+
+            header {
+                position: sticky;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+                background-color: #181818;
+            }
+
+            .total-play-button-place {
+                display: none;
+            }
+
+            .user-followings {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                .top {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: center;
+                    padding-block: 10px;
+                    padding-inline: 20px;
+
+                    span {
+                        font-size: 24px;
+                        font-weight: 700;
+                        color: white;
+                    }
+                }
+
+                .user-followings-container {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    padding-inline: 10px;
+                    overflow-x: scroll;
+                    scrollbar-width: none;
+                }
+            }
+
+            .results {
+                display: none;
+                flex-direction: row;
+                width: 100%;
+                padding-inline: 20px;
+                gap: 2%;
+
+                a {
+                    width: 49%;
+
+                    .main-result-place-all {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        width: 100%;
+
+                        .top {
+                            width: 100%;
+
+                            span {
+                                color: white;
+                                font-size: 30px;
+                                font-weight: 700;
+                            }
+                        }
+
+                        .main-result-place {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: start;
+                            justify-content: center;
+                            padding: 20px;
+                            background: #202020;
+                            border-radius: 10px;
+                            height: 212px;
+
+                            .result-img {
+                                width: 100px;
+                                height: 100px;
+                                border-radius: 100%;
+                                overflow: hidden;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .result-name {
+                                color: white;
+                                font-size: 40px;
+                                font-weight: 700;
+                            }
+
+                            .result-type {
+                                color: #bbbbbb;
+                                font-size: 14px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+
+
+                .other-results-place-all {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    width: 49%;
+
+                    .top {
+                        width: 100%;
+
+                        span {
+                            color: white;
+                            font-size: 30px;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .other-results-container {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .song {
+                            width: calc(100% + 20px);
+                            height: 53px;
+                            padding-inline: 8px;
+
+                            &:hover {
+                                background-color: #353535;
+                            }
+
+                            .left-song {
+                                width: 80%;
+
+                                .number {
+                                    display: none;
+                                }
+
+                                .title {
+                                    margin-left: 10px;
+                                }
+                            }
+
+                            .popularity {
+                                display: none;
+                            }
+
+                            .duration {
+                                justify-content: end;
+                                padding-right: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            footer {
+                margin-top: 50px;
+                margin-bottom: 35px;
+                display: flex;
+                flex-direction: column;
+                padding-inline: 20px;
+                width: 100%;
+            }
+        }
+
+        .right-sidebar {
+            width: 330px;
+            min-width: 200px;
+            height: 100%;
+            background: #181818;
+            border-radius: 8px;
+            padding-bottom: 20px;
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
+    }
+
+    .player {
+        height: 90px;
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        .total-container {
+            .left-sidebar {
+                width: 270px;
+            }
+
+            .container {
+                width: calc(100% - 270px) !important;
+            }
+
+            .right-sidebar {
+                display: none !important;
+            }
+        }
+
+        .player {
+            padding-bottom: 15px;
+            align-items: end;
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        .total-container {
+            .left-sidebar {
+                width: 70px;
+                min-width: 70px;
+            }
+
+            .container {
+                width: 100% !important;
+            }
+        }
+
+        .player {
+            padding-bottom: 0px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+        .total-container {
+            .container {
+                min-width: 200px;
+
+                .user-followings {
+                    .top {
+                        span {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .results {
+                    flex-direction: column;
+                    gap: 30px;
+
+                    a {
+                        width: 100%;
+
+                        .main-result-place-all {
+                            .top {
+                                span {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+
+                    .other-results-place-all {
+                        width: 100%;
+
+                        .top {
+                            span {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        .total-container {
+            .left-sidebar {
+                width: 50px;
+                min-width: 50px;
+            }
+
+            .container {
+                header {
+                    height: 50px;
+                }
+
+                .user-followings {
+                    .top {
+                        span {
+                            font-size: 18px;
+                        }
+                    }
+                }
+
+                .results {
+                    gap: 20px;
+
+                    a {
+                        .main-result-place-all {
+                            .top {
+                                span {
+                                    font-size: 16px;
+                                }
+                            }
+
+                            .main-result-place {
+                                padding: 15px;
+                                height: 180px;
+
+                                .result-img {
+                                    width: 80px;
+                                    height: 80px;
+                                }
+
+                                .result-name {
+                                    font-size: 30px;
+                                }
+                            }
+                        }
+                    }
+
+                    .other-results-place-all {
+                        .top {
+                            span {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+
+                footer {
+                    display: none;
+                }
+            }
+        }
+    }
+}

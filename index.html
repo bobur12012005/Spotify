@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <script defer src="/modules/guard.js"></script>
+    <title>Spotify</title>
+</head>
+
+<body>
+
+    <div class="total-container">
+
+        <aside class="left-sidebar"></aside>
+
+        <main class="container">
+            <header></header>
+
+            <div class="following-singers-container"></div>
+
+            <div class="total-play-button-place">
+                <button class="play-pause">
+                    <img src="/icons/play.svg">
+                </button>
+            </div>
+
+            <div class="made-for-user boxes">
+                <div class="boxes-top">
+                    <span>Made For User</span>
+                    <button class="show-all-1">Show All</button>
+                </div>
+                <div class="made-for-user-container boxes-content-container"></div>
+            </div>
+
+            <div class="your-favorite-artists boxes">
+                <div class="boxes-top">
+                    <span>Your Favorite Artists</span>
+                    <button class="show-all-2">Show All</button>
+                </div>
+                <div class="your-favorite-artists-container boxes-content-container"></div>
+            </div>
+
+            <footer></footer>
+        </main>
+
+        <aside class="right-sidebar active-right-sidebar"></aside>
+
+    </div>
+
+    <div class="player"></div>
+
+    <script type="module" src="/index.js"></script>
+
+</body>
+
+</html>
