@@ -65,3 +65,19 @@ export function millisToMinutesAndSeconds(millis) {
     let seconds = ((millis % 60000) / 1000).toFixed(0)
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds
 }
+
+export function shuffleSongs(array) {
+    let currentIndex = array.length
+    let temporaryValue, randomIndex
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex)
+        currentIndex -= 1
+
+        temporaryValue = array[currentIndex]
+        array[currentIndex] = array[randomIndex]
+        array[randomIndex] = temporaryValue
+    }
+
+    return array
+}

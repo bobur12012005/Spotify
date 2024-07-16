@@ -10,7 +10,7 @@ import "./ui-css/content-artist.css"
 import "./ui-css/song.css"
 import "./ui-css/album-song.css"
 import "./ui-css/player.css"
-import { formatTime, createButton, millisToMinutesAndSeconds } from "../assists/assist.js"
+import { formatTime, createButton, millisToMinutesAndSeconds, shuffleSongs } from "../assists/assist.js"
 
 const PUBLIC_URL = new ApiHandler(import.meta.env.VITE_PUBLIC_URL)
 const token = localStorage.getItem('token')
@@ -877,6 +877,17 @@ export function createPlayer(arr, place) {
     let totalPlayButton = document.querySelector('.total-play-button-place .play-pause')
     let currentSongIndex = 0
     const songs = []
+
+    shuffleBtn.onclick = () => {
+        shuffleBtn.classList.toggle('active-shuffle');
+        if (shuffleBtn.classList.contains('active-shuffle')) {
+            shuffleBtn.firstElementChild.src = '/icons/shuffle-active.svg'
+            shuffleSongs(songs)
+        } else {
+            shuffleBtn.firstElementChild.src = '/icons/shuffle.svg'
+            return songs
+        }
+    }
 
     let isPlaying = false
 
